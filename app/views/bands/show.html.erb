@@ -1,0 +1,20 @@
+<div class="actions">
+  <%= link_to '一覧', bands_path %>
+  <%= link_to '編集', edit_band_path(@band) %>
+  <%= link_to '削除', band_path(@band), :method => 'delete', :confirm => '削除します。よろしいですか？' %>
+</div>
+
+<table>
+  <tr>
+    <th><%= Band.human_attribute_name :name %></th>
+    <td><%= @band.name %></td>
+  </tr>
+  <tr>
+    <th><%= Band.human_attribute_name :created_at %></th>
+    <td><%= @band.created_at %></td>
+  </tr>
+  <tr>
+    <th><%= Band.human_attribute_name :updated_at %></th>
+    <td><%= @band.updated_at %></td>
+  </tr>
+</table>
