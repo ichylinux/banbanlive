@@ -11,6 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20131121032304) do
+
+  create_table "band_members", :force => true do |t|
+    t.integer  "band_id",                       :null => false
+    t.integer  "member_id",                     :null => false
+    t.boolean  "deleted",    :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "bands", :force => true do |t|
+    t.string   "name",                          :null => false
+    t.boolean  "deleted",    :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "members", :force => true do |t|
+    t.string   "last_name"
+    t.string   "first_name"
+    t.boolean  "deleted",    :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
 end
