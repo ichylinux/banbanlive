@@ -37,7 +37,7 @@ end
 gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano', '< 3.0.0'
 
 # To use debugger
 # gem 'debugger'
