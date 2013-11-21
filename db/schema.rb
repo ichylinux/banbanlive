@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20131121143734) do
 
   create_table "band_logos", :force => true do |t|
+    t.integer  "band_id",           :null => false
     t.string   "file",              :null => false
     t.string   "original_filename", :null => false
     t.string   "content_type",      :null => false

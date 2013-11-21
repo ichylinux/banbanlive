@@ -4,6 +4,12 @@
       <th><%= f.label :name %></th>
       <td><%= f.text_field :name %></td>
     </tr>
+    <%= f.fields_for 'band_logo_attributes', @band.band_logo do |f| %>
+      <tr>
+        <th><%= f.label :file %></th>
+        <td><%= f.file_field :file %></td>
+      </tr>
+    <% end %>
   </table>
   
   <%= render 'band_members_fields' %>

@@ -8,6 +8,8 @@ ja:
       band:
         name: バンド名
         <<: *common
+      band_logo:
+        file: バンドロゴ
       band_member:
         instrument_id: 担当
         member_id: メンバー
