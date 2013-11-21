@@ -1,0 +1,24 @@
+<div class="actions">
+  <%= link_to '追加', new_member_path %>
+</div>
+
+<table>
+  <tr>
+    <th><%= Member.human_attribute_name :last_name %></th>
+    <th><%= Member.human_attribute_name :first_name %></th>
+    <th colspan="2"></th>
+  </tr>
+  
+  <% @members.each do |m| %>
+    <tr>
+      <td><%= m.last_name %></td>
+      <td><%= m.first_name %></td>
+      <td>
+        <%= link_to '編集', edit_member_path(m) %>
+      </td>
+      <td>
+        <%= link_to '削除', member_path(m), :method => 'delete', :confirm => '削除します。よろしいですか？' %>
+      </td>
+    </tr>
+  <% end %>
+</table>

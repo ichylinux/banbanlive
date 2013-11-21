@@ -1,0 +1,24 @@
+<div class="actions">
+  <%= link_to '一覧', members_path %>
+  <%= link_to '編集', edit_member_path(@member) %>
+  <%= link_to '削除', member_path(@member), :method => 'delete', :confirm => '削除します。よろしいですか？' %>
+</div>
+
+<table>
+  <tr>
+    <th><%= Member.human_attribute_name :last_name %></th>
+    <td><%= @member.last_name %></td>
+  </tr>
+  <tr>
+    <th><%= Member.human_attribute_name :first_name %></th>
+    <td><%= @member.first_name %></td>
+  </tr>
+  <tr>
+    <th><%= Member.human_attribute_name :created_at %></th>
+    <td><%= @member.created_at %></td>
+  </tr>
+  <tr>
+    <th><%= Member.human_attribute_name :updated_at %></th>
+    <td><%= @member.updated_at %></td>
+  </tr>
+</table>

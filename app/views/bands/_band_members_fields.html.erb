@@ -1,0 +1,17 @@
+<table id="band_members">
+  <tr>
+    <th><%= BandMember.human_attribute_name :instrument_id %></th>
+    <th><%= BandMember.human_attribute_name :member_id %></th>
+    <th></th>
+  </tr>
+  
+  <% @band.band_members.each_with_index do |bm, i| %>
+    <%= render 'band_member_fields', :band_member => bm, :index => i %>
+  <% end %>
+  
+  <tr>
+    <td colspan="3">
+      <%= link_to '追加', {:action => 'new_band_member'}, :onclick => 'band.add_band_member(this); return false;', :remote => false %>
+    </td>
+  </tr>
+</table>

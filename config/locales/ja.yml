@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      band:
+        name: バンド名
+      band_member:
+        instrument_id: 担当
+        member_id: メンバー
+      member:
+        first_name: 名
+        full_name: 氏名
+        last_name: 姓
+
+  messages:
+    confirm_delete: '%{name} を削除します。よろしいですか？'

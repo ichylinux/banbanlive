@@ -1,0 +1,16 @@
+<div id="search_members_dialog" style="display: none;">
+  <table>
+    <tr>
+      <th></th>
+      <th><%= Member.human_attribute_name :full_name %></th>
+    </tr>
+    
+    <% @members.each do |m| %>
+      <tr member_id="<%= m.id %>" member_name="<%= m.full_name %>">
+        <td>
+          <%= link_to_function m.full_name, 'search_members_dialog.select(this); return false;' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+<%= fields_for "band[band_members_attributes][#{index}]", band_member do |f| %>
+  <tr class="<%= 'hidden' if band_member.deleted? %>">
+    <td><%= f.select :instrument_id, BandMember::INSTRUMENTS.invert %></td>
+    <td>
+      <%= f.hidden_field :id %>
+      <%= f.hidden_field :deleted %>
+      <%= f.hidden_field :member_id %>
+      <%= link_to band_member.member_name || '未選択', {:action => 'search_members'},
+            :class => 'member_name',
+            :onclick => 'band.select_member(this); return false;' %>
+    </td>
+    <td>
+      <%= link_to_function '削除', 'band.delete_member(this);' %>
+    </td>
+  </tr>
+<% end %>

@@ -15,6 +15,16 @@ class BandsController < ApplicationController
     @band = Band.new
   end
 
+  def new_band_member
+    bm = BandMember.new
+    render :partial => 'band_member_fields', :locals => {:band_member => bm, :index => params[:index]}
+  end
+
+  def search_members
+    @condition = MemberCondition.new
+    @members = Member.search(@condition)
+  end
+
   def create
     @band = Band.new(params[:band])
     
