@@ -6,6 +6,7 @@ gem 'rails', '3.2.15'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'daddy'
+gem 'devise'
 gem 'mysql2'
 
 # Gems used only for assets and not required
