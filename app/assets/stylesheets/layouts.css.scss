@@ -1,9 +1,52 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
 }
 
+body {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
 .header {
   color: #EEE;
   background: #000;
+  height: 60px;
+  padding: 0 20px;
+  
+  .title {
+    float: left;
+    line-height: 60px;
+    font-size: 30px;
+  }
+
+  .menu {
+    float: right;
+    line-height: 60px;
+
+    a, a:visited {
+      border: solid 2px;
+      border-radius: 8px;
+      padding: 4px 8px;
+      text-decoration: none;
+      color: #AAA;
+      background: #000;
+    }
+    
+    a:hover {
+      color: #FFF;
+    }
+  }
+}
+
+.contents {
+  padding: 20px;
+  min-width: 600px;
+  width: 60%;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
 }
