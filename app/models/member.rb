@@ -1,3 +1,6 @@
 class Member < ActiveRecord::Base
-  # attr_accessible :title, :body
+
+  has_many :band_members, :conditions => ['deleted = ?', false]
+  accepts_nested_attributes_for :band_members
+
 end

@@ -1,3 +1,4 @@
 class BandMember < ActiveRecord::Base
-  # attr_accessible :title, :body
+  belongs_to :band
+  belongs_to :member
 end
