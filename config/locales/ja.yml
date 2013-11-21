@@ -1,8 +1,13 @@
 ja:
   activerecord:
     attributes:
+      common: &common
+        created_at: 登録日時
+        updated_at: 更新日時
+
       band:
         name: バンド名
+        <<: *common
       band_member:
         instrument_id: 担当
         member_id: メンバー
@@ -10,6 +15,7 @@ ja:
         first_name: 名
         full_name: 氏名
         last_name: 姓
+        <<: *common
 
   messages:
     confirm_delete: '%{name} を削除します。よろしいですか？'
