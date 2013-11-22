@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Banbanlive::Application.config.secret_token = '66e1bb3df48b43586b2a8fdb3b7d1d28d4a3c3dad905d57c870d25ac973eb8103dcab36144bb55455ead73952df71e9be7b07f8654ed618c2c3ccbf0e46adff9'
+Banbanlive::Application.config.secret_token = 'dcf1f9cbb7684acb79e3b61465bee128ea04eadc24073fdd6dc4ff80a46b605e76a9b6dbcf653a88c9615e7cc1c00642f46be08f58e37e28a68089a7c0371add'

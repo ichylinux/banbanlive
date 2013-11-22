@@ -41,3 +41,8 @@ end
 
   capture
 end
+
+もし /^(.*?)に (.*?) を添付する$/ do |label, filename|
+  attach_file label, "#{Rails.root}/test/data/#{filename}"
+  capture
+end

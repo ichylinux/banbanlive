@@ -19,6 +19,10 @@ class BandMember < ActiveRecord::Base
 
   attr_accessible :deleted, :instrument_id, :member_id
 
+  def instrument_name
+    INSTRUMENTS[instrument_id]
+  end
+
   def member_name
     return nil unless member_id
     member.full_name

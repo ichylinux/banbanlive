@@ -1,0 +1,11 @@
+<table id="band_members">
+  <caption>メンバー</caption>
+  <tr>
+    <th><%= BandMember.human_attribute_name :instrument_id %></th>
+    <th><%= Member.human_attribute_name :full_name %></th>
+  </tr>
+  
+  <% @band.band_members.each do |bm| %>
+    <%= render 'show_band_member', :band_member => bm %>
+  <% end %>
+</table>

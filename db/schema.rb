@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121062003) do
+ActiveRecord::Schema.define(:version => 20131121143734) do
+
+  create_table "band_logos", :force => true do |t|
+    t.integer  "band_id",           :null => false
+    t.string   "file",              :null => false
+    t.string   "original_filename", :null => false
+    t.string   "content_type",      :null => false
+    t.integer  "file_size",         :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "band_members", :force => true do |t|
     t.integer  "band_id",                          :null => false

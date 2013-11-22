@@ -10,6 +10,10 @@
     <td><%= @band.name %></td>
   </tr>
   <tr>
+    <th><%= BandLogo.human_attribute_name :file %></th>
+    <td><%= image_tag logo_band_path(@band) %></td>
+  </tr>
+  <tr>
     <th><%= Band.human_attribute_name :created_at %></th>
     <td><%= @band.created_at %></td>
   </tr>
@@ -18,3 +22,5 @@
     <td><%= @band.updated_at %></td>
   </tr>
 </table>
+
+<%= render 'show_band_members' %>

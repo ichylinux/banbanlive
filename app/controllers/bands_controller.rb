@@ -11,8 +11,18 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])
   end
 
+  def logo
+    @band = Band.find(params[:id])
+    if @band.band_logo
+      send_file @band.band_logo.file.thumb.path, :type => @band.band_logo.content_type
+    else
+      render :nothing => true
+    end
+  end
+
   def new
     @band = Band.new
+    @band.band_logo ||= BandLogo.new
   end
 
   def new_band_member
@@ -42,6 +52,7 @@ class BandsController < ApplicationController
 
   def edit
     @band = Band.find(params[:id])
+    @band.band_logo ||= @band.build_band_logo
   end
 
   def update

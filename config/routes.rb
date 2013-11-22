@@ -8,6 +8,9 @@ Banbanlive::Application.routes.draw do
       get 'new_band_member'
       get 'search_members'
     end
+    member do
+      get 'logo'
+    end
   end
   
   resources :members
