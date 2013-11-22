@@ -1,0 +1,11 @@
+<table id="entries">
+  <caption>エントリー</caption>
+  <tr>
+    <th><%= Entry.human_attribute_name :entry_no %></th>
+    <th><%= Entry.human_attribute_name :band_id %></th>
+  </tr>
+  
+  <% @live.entries.each do |e| %>
+    <%= render 'show_entry', :entry => e %>
+  <% end %>
+</table>

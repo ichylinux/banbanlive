@@ -14,7 +14,13 @@ Banbanlive::Application.routes.draw do
   end
   
   resources :members
-  resources :lives
+
+  resources :lives do
+    collection do
+      get 'new_entry'
+      get 'search_bands'
+    end
+  end
 
   root :to => 'welcome#index'
 end

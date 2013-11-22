@@ -1,0 +1,17 @@
+<table id="entries">
+  <tr>
+    <th><%= Entry.human_attribute_name :entry_no %></th>
+    <th><%= Entry.human_attribute_name :band_id %></th>
+    <th></th>
+  </tr>
+  
+  <% @live.entries.each_with_index do |e, i| %>
+    <%= render 'entry_fields', :entry => e, :index => i %>
+  <% end %>
+  
+  <tr>
+    <td colspan="3">
+      <%= link_to '追加', {:action => 'new_entry'}, :onclick => 'live.add_entry(this); return false;' %>
+    </td>
+  </tr>
+</table>

@@ -11,4 +11,8 @@ class Band < ActiveRecord::Base
   accepts_nested_attributes_for :band_members
   attr_accessible :band_members_attributes
 
+  def self.search(condition)
+    not_deleted
+  end
+
 end

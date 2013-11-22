@@ -16,25 +16,24 @@ band.add_band_member = function(trigger) {
 
 band.select_member = function(trigger) {
   var url = $(trigger).attr('href');
-  var params = {
-    format: 'js'
-  };
+  var options = {title: 'メンバーを選択', parent: trigger};
 
-  $.get(url, params, function() {
-    band.trigger = trigger;
-  });
+  band.dialog = new Dialog('search_members_dialog', options);
+  band.dialog.open(url);
 };
 
-band.member_selected = function(member) {
-  var tr = $(band.trigger).closest('tr');
+band.member_selected = function(trigger) {
+  if (trigger) {
+    var tr = $(trigger).closest('tr');
+    var member_id = tr.attr('member_id');
+    var member_name = tr.attr('member_name');
 
-  if (member) {
-    tr.find('input[name*="member_id"]').val(member.id);
-    tr.find('a.member_name').text(member.full_name);
-  } else {
-    tr.find('input[name*="member_id"]').val('');
-    tr.find('a').text('未選択');
+    var parent_tr = $(band.dialog.parent).closest('tr');
+    parent_tr.find('input[name*="member_id"]').val(member_id);
+    parent_tr.find('a.member_name').text(member_name);
   }
+
+  band.dialog.close();
 };
 
 band.delete_member = function(trigger) {

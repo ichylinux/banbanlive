@@ -14,6 +14,17 @@ class LivesController < ApplicationController
     @live = Live.new
   end
 
+  def new_entry
+    e = Entry.new
+    render :partial => 'entry_fields', :locals => {:entry => e, :index => params[:index]}
+  end
+
+  def search_bands
+    @condition = BandCondition.new
+    @bands = Band.search(@condition)
+    render :layout => false
+  end
+
   def create
     @live = Live.new(params[:live])
     

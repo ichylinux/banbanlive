@@ -1,4 +1,4 @@
-<div id="search_members_dialog" style="display: none;">
+<div id="<%= params[:dialog_id] %>" style="display: none;">
   <table>
     <tr>
       <th></th>
@@ -8,7 +8,7 @@
     <% @members.each do |m| %>
       <tr member_id="<%= m.id %>" member_name="<%= m.full_name %>">
         <td>
-          <%= link_to_function m.full_name, 'search_members_dialog.select(this); return false;' %>
+          <%= link_to_function m.full_name, "band.member_selected(this); return false;" %>
         </td>
       </tr>
     <% end %>

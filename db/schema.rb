@@ -40,11 +40,12 @@ ActiveRecord::Schema.define(:version => 20131122030500) do
   end
 
   create_table "entries", :force => true do |t|
-    t.integer  "live_id",    :null => false
-    t.integer  "band_id",    :null => false
-    t.integer  "entry_no",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "live_id",                       :null => false
+    t.integer  "band_id",                       :null => false
+    t.integer  "entry_no",                      :null => false
+    t.boolean  "deleted",    :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "lives", :force => true do |t|

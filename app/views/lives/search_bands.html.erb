@@ -1,0 +1,16 @@
+<div id="<%= params[:dialog_id] %>" style="display: none;">
+  <table>
+    <tr>
+      <th></th>
+      <th><%= Band.human_attribute_name :name %></th>
+    </tr>
+    
+    <% @bands.each do |b| %>
+      <tr band_id="<%= b.id %>" band_name="<%= b.name %>">
+        <td>
+          <%= link_to_function b.name, "live.band_selected(this);" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

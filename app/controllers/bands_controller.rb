@@ -33,6 +33,7 @@ class BandsController < ApplicationController
   def search_members
     @condition = MemberCondition.new
     @members = Member.search(@condition)
+    render :layout => false
   end
 
   def create

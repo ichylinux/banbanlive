@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class Live < ActiveRecord::Base
 
   attr_accessible :title
@@ -11,5 +13,9 @@ class Live < ActiveRecord::Base
 
   attr_accessible :address
   attr_accessible :map_url
+
+  has_many :entries, :conditions => ['deleted = ?', false]
+  accepts_nested_attributes_for :entries
+  attr_accessible :entries_attributes
 
 end
