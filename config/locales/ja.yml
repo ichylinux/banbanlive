@@ -18,6 +18,13 @@ ja:
         full_name: 氏名
         last_name: 姓
         <<: *common
+      live:
+        address: 住所
+        map_url: 地図のURL
+        place: 場所
+        start_date: 開催日
+        title: タイトル
+        <<: *common
 
   messages:
     confirm_delete: '%{name} を削除します。よろしいですか？'
