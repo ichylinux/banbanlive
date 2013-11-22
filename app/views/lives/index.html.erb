@@ -1,0 +1,30 @@
+<div class="actions">
+  <%= link_to '追加', new_live_path %>
+</div>
+
+<table>
+  <tr>
+    <th><%= Live.human_attribute_name :title %></th>
+    <th><%= Live.human_attribute_name :start_date %></th>
+    <th><%= Live.human_attribute_name :place %></th>
+    <th><%= Live.human_attribute_name :address %></th>
+    <th><%= Live.human_attribute_name :map_url %></th>
+    <th colspan="2"></th>
+  </tr>
+  
+  <% @lives.each do |l| %>
+    <tr>
+      <td><%= l.title %></td>
+      <td><%= l.start_date %></td>
+      <td><%= l.place %></td>
+      <td><%= l.address %></td>
+      <td><%= l.map_url %></td>
+      <td>
+        <%= link_to '編集', edit_live_path(l) %>
+      </td>
+      <td>
+        <%= link_to '削除', live_path(l), :method => 'delete', :confirm => '削除します。よろしいですか？' %>
+      </td>
+    </tr>
+  <% end %>
+</table>

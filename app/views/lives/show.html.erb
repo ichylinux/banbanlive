@@ -1,0 +1,36 @@
+<div class="actions">
+  <%= link_to '一覧', lives_path %>
+  <%= link_to '編集', edit_live_path(@live) %>
+  <%= link_to '削除', live_path(@live), :method => 'delete', :confirm => '削除します。よろしいですか？' %>
+</div>
+
+<table>
+  <tr>
+    <th><%= Live.human_attribute_name :title %></th>
+    <td><%= @live.title %></td>
+  </tr>
+  <tr>
+    <th><%= Live.human_attribute_name :start_date %></th>
+    <td><%= @live.start_date %></td>
+  </tr>
+  <tr>
+    <th><%= Live.human_attribute_name :place %></th>
+    <td><%= @live.place %></td>
+  </tr>
+  <tr>
+    <th><%= Live.human_attribute_name :address %></th>
+    <td><%= @live.address %></td>
+  </tr>
+  <tr>
+    <th><%= Live.human_attribute_name :map_url %></th>
+    <td><%= @live.map_url %></td>
+  </tr>
+  <tr>
+    <th><%= Live.human_attribute_name :created_at %></th>
+    <td><%= @live.created_at %></td>
+  </tr>
+  <tr>
+    <th><%= Live.human_attribute_name :updated_at %></th>
+    <td><%= @live.updated_at %></td>
+  </tr>
+</table>
