@@ -14,6 +14,7 @@ Banbanlive::Application.routes.draw do
   end
   
   resources :members
+  resources :lives
 
   root :to => 'welcome#index'
 end
