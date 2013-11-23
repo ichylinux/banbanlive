@@ -14,7 +14,7 @@ class Live < ActiveRecord::Base
   attr_accessible :address
   attr_accessible :map_url
 
-  has_many :entries, :conditions => ['deleted = ?', false]
+  has_many :entries, :conditions => ['deleted = ?', false], :order => 'entry_no'
   accepts_nested_attributes_for :entries
   attr_accessible :entries_attributes
 

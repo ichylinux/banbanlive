@@ -1,19 +1,19 @@
 <%= fields_for "live[entries_attributes][#{index}]", entry do |f| %>
-  <tr class="entry <%= 'hidden' if entry.deleted? %>">
-    <td>
+  <div class="row entry <%= 'hidden' if entry.deleted? %>">
+    <span class="cell">
       <span><%= entry.entry_no %></span>
       <%= f.hidden_field :id %>
       <%= f.hidden_field :deleted %>
       <%= f.hidden_field :entry_no %>
-    </td>
-    <td>
+    </span>
+    <span class="cell">
       <%= f.hidden_field :band_id %>
       <%= link_to entry.band_name || '未選択', {:action => 'search_bands'},
             :class => 'band_name',
             :onclick => 'live.select_band(this); return false;' %>
-    </td>
-    <td>
+    </span>
+    <span class="cell">
       <%= link_to_function '削除', 'live.delete_entry(this);' %>
-    </td>
-  </tr>
+    </span>
+  </div>
 <% end %>

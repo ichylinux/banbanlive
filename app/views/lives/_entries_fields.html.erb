@@ -1,17 +1,34 @@
-<table id="entries">
-  <tr>
-    <th><%= Entry.human_attribute_name :entry_no %></th>
-    <th><%= Entry.human_attribute_name :band_id %></th>
-    <th></th>
-  </tr>
+<script>
+  $(document).ready(function() {
+    $('#entries .tbody').sortable({
+      connectWith: '#entries .tbody',
+      update: live.update_entry_numbers
+    }).disableSelection();
+  });
+</script>
+
+<div id="entries" class="table">
+  <div class="thead">
+    <div class="row">
+      <span class="cell"><%= Entry.human_attribute_name :entry_no %></span>
+      <span class="cell"><%= Entry.human_attribute_name :band_id %></span>
+      <span class="cell"></span>
+    </div>
+  </div>
   
-  <% @live.entries.each_with_index do |e, i| %>
-    <%= render 'entry_fields', :entry => e, :index => i %>
-  <% end %>
+  <div class="tbody">
+    <% @live.entries.each_with_index do |e, i| %>
+      <%= render 'entry_fields', :entry => e, :index => i %>
+    <% end %>
+  </div>
   
-  <tr>
-    <td colspan="3">
-      <%= link_to '追加', {:action => 'new_entry'}, :onclick => 'live.add_entry(this); return false;' %>
-    </td>
-  </tr>
-</table>
+  <div class="tfoot">
+    <div class="row">
+      <span class="cell"></span>
+      <span class="cell"></span>
+      <span class="cell">
+        <%= link_to '追加', {:action => 'new_entry'}, :onclick => 'live.add_entry(this); return false;' %>
+      </span>
+    </div>
+  </div>
+</div>

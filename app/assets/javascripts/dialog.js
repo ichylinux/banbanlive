@@ -21,7 +21,7 @@ Dialog.prototype.open = function(url, params) {
     $(that.selector).dialog({
       modal: true,
       title: that.title,
-      buttons: {'閉じる': close }
+      buttons: {'閉じる': function() { that.close(); } }
     });
   });
 };
